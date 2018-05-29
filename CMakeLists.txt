@@ -10,7 +10,7 @@ if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
 endif ()
 
 # OpenVC3 required
-find_package(OpenCV 3.2.0 REQUIRED)
+find_package(OpenCV REQUIRED)
 
 # where to find header files
 include_directories(.)
@@ -47,9 +47,15 @@ set(SOURCE_FILES
 # pack objects to static library
 add_library(easypr STATIC ${SOURCE_FILES})
 
+message("your system is " ${CMAKE_SYSTEM_NAME})
+
 if (CMAKE_SYSTEM_NAME MATCHES "Darwin")
     set(EXECUTABLE_NAME "demo")
 elseif (CMAKE_SYSTEM_NAME MATCHES "Linux")
+    set(EXECUTABLE_NAME "demo")
+elseif (CMAKE_SYSTEM_NAME MATCHES "Windows")
+    set(EXECUTABLE_NAME "demo")
+else ()
     set(EXECUTABLE_NAME "demo")
 endif ()
 
@@ -57,7 +63,7 @@ endif ()
 # set(CMAKE_BUILD_TYPE Release)
 
 # test cases
-add_executable(${EXECUTABLE_NAME} test/main.cpp)
+add_executable(${EXECUTABLE_NAME}  test/main.cpp)
 # link opencv libs
 target_link_libraries(${EXECUTABLE_NAME} easypr thirdparty ${OpenCV_LIBS})
 # MESSAGE(${CMAKE_BINARY_DIR}/../)

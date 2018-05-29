@@ -2,6 +2,7 @@
 #include "easypr/core/core_func.h"
 #include "easypr/util/util.h"
 #include "easypr/core/params.h"
+#include <opencv2/imgproc/types_c.h>
 
 using namespace std;
 

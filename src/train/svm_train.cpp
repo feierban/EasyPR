@@ -2,6 +2,7 @@
 #include "easypr/util/util.h"
 #include "easypr/config.h"
 
+#include <opencv2/core/types_c.h>
 #ifdef OS_WINDOWS
 #include <ctime>
 #endif

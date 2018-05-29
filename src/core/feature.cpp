@@ -2,6 +2,8 @@
 #include "easypr/core/core_func.h"
 #include "thirdparty/LBP/lbp.hpp"
 
+#include <opencv2/imgproc/types_c.h>
+
 namespace easypr {
 
 

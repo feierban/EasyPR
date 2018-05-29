@@ -9,6 +9,8 @@
 #include "easypr/util/util.h"
 #include "easypr/train/create_data.h"
 
+#include <opencv2/core/types_c.h>
+
 namespace easypr {
 
   AnnChTrain::AnnChTrain(const char* chars_folder, const char* xml)
